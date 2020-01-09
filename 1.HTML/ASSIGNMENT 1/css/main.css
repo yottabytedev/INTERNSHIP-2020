@@ -1,0 +1,21 @@
+#top{
+    font-family: 'Ma Shan Zheng', cursive;
+    font-size: 48px;
+    text-align: center;
+    padding-top: 2%;
+    color:#AACCFF;
+}
+#position{
+    margin-top: 50px;
+    background-color: green;
+}
+#image{
+    float: left;
+    padding-left: 15%;
+}
+#marks{
+    float: left;
+    margin-top: 15px;
+    padding-left: 15%;
+    color:rgb(51, 255, 143);
+}
