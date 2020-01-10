@@ -7,47 +7,48 @@
         <meta name="keywords" content="HTML,CSS">
         <meta name="author" content="Devesh Kaushik">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/main.css">
     </head>
-    <body style="background-color: teal;">
-      <div style="margin: auto; width: 50%; text-align: center;">
-        <img src="img/logo.png" alt="logo" style="width: 150px; height: 150px;" />
-        <h1 style="color: white;font-family: sans-serif;"> Registration Form </h1>
+    <body>
+      <div id="outer">
+        <img src="img/logo.png" alt="logo" id="img"/>
+        <h1 id="h1"> Registration Form </h1>
       </div>
-      <form style="margin: auto;margin-top: 40px; width: 50%; background-color: white; border-radius: 6px;padding-bottom: 10px;">
+      <form id="form">
           <div>
               <br>
-              <label for="FirstName" style="font-size:22px;font-family: sans-serif;padding-left: 20px;">First Name<sup style="color: red; font-size: 22px;">*</sup></label><br>
-              <input type="text" placeholder="First Name" style="display: block; width: 90%;padding:20px;border-top: 1px;border-left: 1px;margin: auto; opacity: 0.5;" required/>
+              <label for="FirstName" class="label">First Name<sup class="sup">*</sup></label><br>
+              <input type="text" placeholder="First Name" class="input" required/>
           </div>
           
           <div>
             <br>
-            <label for="LastName" style="font-size:22px;font-family: sans-serif;padding-left: 20px;">Last Name<sup style="color: red; font-size: 22px;">*</sup></label><br>
-            <input type="text" placeholder="Last Name" style="display: block; width: 90%;padding:20px;border-top: 1px;border-left: 1px;margin: auto; opacity: 0.5;" required />          
+            <label for="LastName" class="label">Last Name<sup >*</sup></label><br>
+            <input type="text" placeholder="Last Name" class="input" required />          
           </div>
           
           <div>
             <br>
-            <label for="Email" style="font-size:22px;font-family: sans-serif;padding-left: 20px;">Email Id<sup style="color: red; font-size: 22px;">*</sup></label><br>
-            <input type="email" placeholder="Email" style="display: block; width: 90%;padding:20px;border-top: 1px;border-left: 1px;margin: auto; opacity: 0.5;" required/>    
+            <label for="Email" class="label">Email Id<sup class="sup">*</sup></label><br>
+            <input type="email" placeholder="Email" class="input" required/>    
           </div>     
           
           <div>
             <br>
-            <label for="password" style="font-size:22px;font-family: sans-serif;padding-left: 20px;">Password<sup style="color: red; font-size: 22px;">*</sup></label><br>
-            <input type="password" placeholder="Password" style="display: block; width: 90%;padding:20px;border-top: 1px;border-left: 1px;margin: auto; opacity: 0.5;" required/>    
+            <label for="password" class="label">Password<sup class="sup">*</sup></label><br>
+            <input type="password" placeholder="Password" class="input" required/>    
           </div> 
 
           <div>
             <br>
-            <label for="cpassword" style="font-size:22px;font-family: sans-serif;padding-left: 20px;">Confirm Password<sup style="color: red; font-size: 22px;">*</sup></label><br>
-            <input type="password" placeholder="Confirm Password" style="display: block; width: 90%;padding:20px;border-top: 1px;border-left: 1px;margin: auto; opacity: 0.5;" required/>    
+            <label for="cpassword" class="label">Confirm Password<sup class="sup">*</sup></label><br>
+            <input type="password" placeholder="Confirm Password" class="input" required/>    
           </div> 
 
           <div>
             <br>
-            <label for="gender" style="font-size:22px;font-family: sans-serif;padding-left: 20px;">Gender<sup style="color: red; font-size: 22px;">*</sup></label><br>
-            <select style="display: block; width: 90%;padding:20px;border-top: 1px;border-left: 1px;margin: auto; opacity: 0.5;">
+            <label for="gender" class="label">Gender<sup class="sup">*</sup></label><br>
+            <select class="input">
               <OPTION Value="M">Male</OPTION>
               <OPTION Value="F">Female</OPTION>
               <OPTION Value="O">Other</OPTION>             
@@ -56,38 +57,38 @@
 
           <div>
             <br>
-            <label for="phone1" style="font-size:22px;font-family: sans-serif;padding-left: 20px;">Phone no.<sup style="color: red; font-size: 22px;">*</sup></label><br>
-            <input type="number" placeholder="91XXXXXX89" style="display: block; width: 90%;padding:20px;border-top: 1px;border-left: 1px;margin: auto; opacity: 0.5;" required/>    
+            <label for="phone1" class="label">Phone no.<sup class="sup">*</sup></label><br>
+            <input type="number" placeholder="91XXXXXX89" class="input" required/>    
           </div> 
 
           <div>
             <br>
-            <label for="phone2" style="font-size:22px;font-family: sans-serif;padding-left: 20px;">Alternative Phone no.</label><br>
-            <input type="number" placeholder="91XXXXXX89" style="display: block; width: 90%;padding:20px;border-top: 1px;border-left: 1px;margin: auto; opacity: 0.5;"/>    
+            <label for="phone2" class="label">Alternative Phone no.</label><br>
+            <input type="number" placeholder="91XXXXXX89" class="input"/>    
           </div> 
 
           <div>
             <br>
-            <label for="address1" style="font-size:22px;font-family: sans-serif;padding-left: 20px;">Permanent Address<sup style="color: red; font-size: 22px;">*</sup></label><br>
-            <input type="text" placeholder="Address" style="display: block; width: 90%;padding:20px;border-top: 1px;border-left: 1px;margin: auto; opacity: 0.5;" required/>    
+            <label for="address1" class="label">Permanent Address<sup class="sup">*</sup></label><br>
+            <input type="text" placeholder="Address" class="input" required/>    
           </div> 
 
           <div>
             <br>
-            <label for="address2" style="font-size:22px;font-family: sans-serif;padding-left: 20px;">Current Address</label><br>
-            <input type="text" placeholder="Address" style="display: block; width: 90%;padding:20px;border-top: 1px;border-left: 1px;margin: auto; opacity: 0.5;"/>    
+            <label for="address2" class="label">Current Address</label><br>
+            <input type="text" placeholder="Address" class="input"/>    
           </div> 
 
           <div>
             <br>
-            <label for="city" style="font-size:22px;font-family: sans-serif;padding-left: 20px;">City<sup style="color: red; font-size: 22px;">*</sup></label><br>
-            <input type="text" placeholder="City" style="display: block; width: 90%;padding:20px;border-top: 1px;border-left: 1px;margin: auto; opacity: 0.5;" required/>    
+            <label for="city" class="label">City<sup class="sup">*</sup></label><br>
+            <input type="text" placeholder="City" class="input" required/>    
           </div> 
 
           <div>
             <br>
-            <label for="state" style="font-size:22px;font-family: sans-serif;padding-left: 20px;">State<sup style="color: red; font-size: 22px;">*<sup></label><br>
-            <select style="display: block; width: 90%;padding:20px;border-top: 1px;border-left: 1px;margin: auto; opacity: 0.5;" required>  
+            <label for="state" class="label">State<sup class="sup">*<sup></label><br>
+            <select class="input" required>  
               <option value="">------------Select State------------</option>
               <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
               <option value="Andhra Pradesh">Andhra Pradesh</option>
@@ -129,8 +130,8 @@
 
           <div>
             <br>
-            <label for="country" style="font-size:22px;font-family: sans-serif;padding-left: 20px;">Country<sup style="color: red; font-size: 22px;">*</sup></label><br>
-            <select style="display: block; width: 90%;padding:20px;border-top: 1px;border-left: 1px;margin: auto; opacity: 0.5;" required>  
+            <label for="country" class="label">Country<sup class="sup">*</sup></label><br>
+            <select class="input" required>  
                 <option Value="" Selected="True">Select Country</option>
                 <option Value="AF">Afghanistan</option>
                 <option Value="AL">Albania</option>
@@ -374,15 +375,14 @@
 
           <div>
             <br>
-            <label for="subscribe" style="font-size:22px;font-family: sans-serif;padding-left: 20px;">Subscribe News Channel<sup style="color: red; font-size: 22px;">*</sup></label><br><br>
-              <div style="padding-left: 20px; font-family: sans-serif;">
-                <input type="radio" name="sub" value="yes" checked> yes
-                <input type= "radio" name= "sub" value="no"> no
+            <label for="subscribe" class="label">Subscribe News Channel<sup class="sup">*</sup></label><br><br>
+              <div id="forradio">
+                <input type="radio" name="sub" value="yes"> yes <br>
+                <input type="radio" name= "sub" value="no"> no
               </div>
           </div> 
-          <div style="margin: auto; width: 50%;text-align: center;margin-top: 50px;">
-            <button style="background-color: #4CAF50; border: none; color: white;padding: 15px 32px;text-align: center;text-decoration: none;
-            display: inline-block;font-size: 16px;border-radius: 6px;margin: auto;" type="button">Register</button>
+          <div id="btn">
+            <button id="btns" type="button">Register</button>
           </div>
       </form>
     </body>
