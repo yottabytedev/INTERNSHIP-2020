@@ -6,11 +6,12 @@ body{
     width: 50%; 
     text-align: center;
 }
-#img{
+
+#outer img{
     width: 150px; 
     height: 150px;
 }
-#h1{
+#outer h1{
     color: white;
     font-family: sans-serif;
 }
@@ -23,7 +24,9 @@ body{
     border-radius: 6px;
     padding-bottom: 10px;
 }
-
+#form div{
+    padding-top: 10px;
+}
 .label{
     font-size:22px;
     font-family: sans-serif;
@@ -41,23 +44,22 @@ body{
     padding:20px;
     border-top: 1px;
     border-left: 1px;
-    margin: auto; 
-    opacity: 0.5;
+    margin: auto;
 }
 
-#forradio{
+#for-radio{
     padding-left: 20px; 
     font-family: sans-serif;
 }
 
-#btn{
+#btnContainer{
     margin: auto; 
     width: 50%;
     text-align: center;
     margin-top: 50px;
 }
 
-#btns{
+#submitButton{
     background-color: #4CAF50; 
     border: none; 
     color: white;

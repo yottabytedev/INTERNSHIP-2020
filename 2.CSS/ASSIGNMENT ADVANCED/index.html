@@ -3,7 +3,7 @@
     <head>
         <title> Devesh Kaushik</title>
         <meta charset="UTF-8">
-        <meta name="description" content="Assignment Basic">
+        <meta name="description" content="Assignment Advanced">
         <meta name="keywords" content="HTML,CSS">
         <meta name="author" content="Devesh Kaushik">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,84 +11,72 @@
     </head>
     <body>
       <div id="outer">
-        <img src="img/logo.png" alt="logo" id="img"/>
-        <h1 id="h1"> Registration Form </h1>
+        <img src="img/logo.png" alt="logo"/>
+        <h1> Registration Form </h1>
       </div>
       <form id="form">
-          <div>
-              <br>
-              <label for="FirstName" class="label">First Name<sup class="sup">*</sup></label><br>
-              <input type="text" placeholder="First Name" class="input" required/>
+          <div>            
+              <label for="firstName" class="label">First Name<sup class="sup">*</sup></label>
+              <input type="text" id="firstName" placeholder="First Name" class="input" required/>
           </div>
           
-          <div>
-            <br>
-            <label for="LastName" class="label">Last Name<sup >*</sup></label><br>
-            <input type="text" placeholder="Last Name" class="input" required />          
+          <div>          
+            <label for="lastName" class="label">Last Name<sup class="sup">*</sup></label>
+            <input type="text" id="lastName" placeholder="Last Name" class="input" required />          
           </div>
           
-          <div>
-            <br>
-            <label for="Email" class="label">Email Id<sup class="sup">*</sup></label><br>
-            <input type="email" placeholder="Email" class="input" required/>    
+          <div>          
+            <label for="email" class="label">Email Id<sup class="sup">*</sup></label>
+            <input type="email" id="email" placeholder="Email" class="input" required/>    
           </div>     
           
-          <div>
-            <br>
-            <label for="password" class="label">Password<sup class="sup">*</sup></label><br>
-            <input type="password" placeholder="Password" class="input" required/>    
+          <div>          
+            <label for="password" class="label">Password<sup class="sup">*</sup></label>
+            <input type="password" id="password" placeholder="Password" class="input" required/>    
           </div> 
 
-          <div>
-            <br>
-            <label for="cpassword" class="label">Confirm Password<sup class="sup">*</sup></label><br>
-            <input type="password" placeholder="Confirm Password" class="input" required/>    
+          <div>          
+            <label for="confirmPassword" class="label">Confirm Password<sup class="sup">*</sup></label>
+            <input type="password" id="confirmPassword" placeholder="Confirm Password" class="input" required/>    
           </div> 
 
-          <div>
-            <br>
-            <label for="gender" class="label">Gender<sup class="sup">*</sup></label><br>
-            <select class="input">
+          <div>          
+            <label for="gender" class="label">Gender<sup class="sup">*</sup></label>
+            <select id="gender" class="input">
               <OPTION Value="M">Male</OPTION>
               <OPTION Value="F">Female</OPTION>
               <OPTION Value="O">Other</OPTION>             
             </select>
           </div> 
 
-          <div>
-            <br>
-            <label for="phone1" class="label">Phone no.<sup class="sup">*</sup></label><br>
-            <input type="number" placeholder="91XXXXXX89" class="input" required/>    
+          <div>          
+            <label for="phoneNumber" class="label">Phone no.<sup class="sup">*</sup></label>
+            <input type="number" id="phoneNumber" placeholder="91XXXXXX89" class="input" required/>    
           </div> 
 
-          <div>
-            <br>
-            <label for="phone2" class="label">Alternative Phone no.</label><br>
-            <input type="number" placeholder="91XXXXXX89" class="input"/>    
+          <div>           
+            <label for="alternativePhoneNumber" class="label">Alternative Phone no.</label>
+            <input type="number" id="alternativePhoneNumber" placeholder="91XXXXXX89" class="input"/>    
           </div> 
 
-          <div>
-            <br>
-            <label for="address1" class="label">Permanent Address<sup class="sup">*</sup></label><br>
-            <input type="text" placeholder="Address" class="input" required/>    
+          <div>           
+            <label for="permanentAddress" class="label">Permanent Address<sup class="sup">*</sup></label>
+            <input type="text" id="permanentAddress" placeholder="Address" class="input" required/>    
           </div> 
 
-          <div>
-            <br>
-            <label for="address2" class="label">Current Address</label><br>
-            <input type="text" placeholder="Address" class="input"/>    
+          <div>           
+            <label for="currentAddress" class="label">Current Address</label>
+            <input type="text" id="currentAddress" placeholder="Address" class="input"/>    
           </div> 
 
-          <div>
-            <br>
-            <label for="city" class="label">City<sup class="sup">*</sup></label><br>
-            <input type="text" placeholder="City" class="input" required/>    
+          <div>           
+            <label for="city" class="label">City<sup class="sup">*</sup></label>
+            <input type="text" id="city" placeholder="City" class="input" required/>    
           </div> 
 
-          <div>
-            <br>
-            <label for="state" class="label">State<sup class="sup">*<sup></label><br>
-            <select class="input" required>  
+          <div>           
+            <label for="state" class="label">State<sup class="sup">*</sup></label>
+            <select class="input" id="state" required>  
               <option value="">------------Select State------------</option>
               <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
               <option value="Andhra Pradesh">Andhra Pradesh</option>
@@ -128,10 +116,9 @@
             </select>  
           </div> 
 
-          <div>
-            <br>
-            <label for="country" class="label">Country<sup class="sup">*</sup></label><br>
-            <select class="input" required>  
+          <div>           
+            <label for="country" class="label">Country<sup class="sup">*</sup></label>
+            <select class="input" id="country" required>  
                 <option Value="" Selected="True">Select Country</option>
                 <option Value="AF">Afghanistan</option>
                 <option Value="AL">Albania</option>
@@ -373,16 +360,17 @@
             </select>  
           </div> 
 
-          <div>
-            <br>
-            <label for="subscribe" class="label">Subscribe News Channel<sup class="sup">*</sup></label><br><br>
-              <div id="forradio">
-                <input type="radio" name="sub" value="yes"> yes <br>
-                <input type="radio" name= "sub" value="no"> no
+          <div>          
+            <p class="label">Subscribe News Channel<sup class="sup">*</sup></label>
+              <div id="for-radio">
+                <input type="radio" id="subscribeYes" name="sub" value="yes">
+                <label for="subscribeYes">yes </label> 
+                <input type="radio" id="subscribeNo" name= "sub" value="no"> 
+                <label for="subscribeNo">no </label>
               </div>
           </div> 
-          <div id="btn">
-            <button id="btns" type="button">Register</button>
+          <div id="btnContainer">
+            <button type="button" id="submitButton">Register</button>
           </div>
       </form>
     </body>
