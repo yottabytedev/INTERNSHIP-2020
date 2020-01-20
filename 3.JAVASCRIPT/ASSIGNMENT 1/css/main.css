@@ -145,11 +145,11 @@ select:focus{
     width:70%;
 }
 
-.radioContainer {
+.radio-container {
     padding:20px;
 }
 
-.radioContainer label{
+.radio-container label{
     color: white;
 }
 
