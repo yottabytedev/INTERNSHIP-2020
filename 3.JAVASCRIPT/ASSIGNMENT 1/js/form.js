@@ -66,25 +66,21 @@ function validateForm() {
       password= document.forms.registrationForm.password.value,
       confirmPassword=document.forms.registrationForm.confirmPassword.value,
       currentAddress = document.forms.registrationForm.currentAddress.value,
-      // currentCity = document.forms.registrationForm.currentCity.value,
-      // currentState = document.forms.registrationForm.currentState.value,
+      currentCountry = document.forms.registrationForm.currentCountry.value,
+      currentState = document.forms.registrationForm.currentState.value,
+      currentCity = document.forms.registrationForm.currentCity.value,
       currentZipCode = document.forms.registrationForm.currentZipCode.value,
-      // permanentAddress = document.forms.registrationForm.permanentAddress.value,
-      // city = document.forms.registrationForm.city.value,
-      // state = document.forms.registrationForm.state.value,
-      // country = document.forms.registrationForm.country.value,
-      // zipcode = document.forms.registrationForm.curzipcode.value,
       dob = document.forms.registrationForm.dob.value,
-      gender = document.forms.registrationForm.gender.value,
-      subscription = document.forms.registrationForm.subscription.value,
+      subscription = document.forms.registrationForm.subscription,
       captchaAnswer = document.forms.registrationForm.captchaAnswer.value;
       
   var vaildEmailRegExpression = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
   var letter = /[a-zA-Z]/;
   var number = /[0-9]/;
   var allLetters = /^[a-zA-Z]+$/;
-  var dobPattern = /^([0-9]{2})-([0-9]{2})-([0-9]{4})$/;
+  var dobPattern = /^([0-9]{4})-([0-9]{2})-([0-9]{2})$/;
   var scrollToElement = "";
+  var valid = 0;
   
   if (!firstName.match(allLetters) || firstName == "") {
     document.getElementById("errFirstName").innerHTML = "invalid name";
@@ -92,17 +88,18 @@ function validateForm() {
   }else{
     document.getElementById("errFirstName").innerHTML = "";
     scrollToElement = '';
+    valid += 1;
   }
 
-  if (!middleName.match(allLetters)){
+  if (!middleName.match(allLetters) && middleName.length != 0){
     document.getElementById("errMiddleName").innerHTML = "invalid middle name";
     if (scrollToElement === ''){
         scrollToElement = "middleName";
     }
-
   }else{
     document.getElementById("errMiddleName").innerHTML = "";
-    scrollToElement = '';
+    scrollToElement = '';    
+    valid += 1;
   }
 
   if (!lastName.match(allLetters) || lastName == "") {
@@ -113,6 +110,7 @@ function validateForm() {
   }else{
     document.getElementById("errLastName").innerHTML = "";
     scrollToElement = '';
+    valid += 1;
   }
 
   if (vaildEmailRegExpression.test(email) == false) {
@@ -123,6 +121,7 @@ function validateForm() {
   }else{
     document.getElementById("errEmail").innerHTML = "";
     scrollToElement = '';
+    valid += 1;
   }
 
   if (password.length < 8 || !letter.test(password) || !number.test(password)) {
@@ -133,6 +132,7 @@ function validateForm() {
   }else{
     document.getElementById("errPassword").innerHTML = "";
     scrollToElement = '';
+    valid += 1;
   }
 
   if(password !== confirmPassword){
@@ -142,6 +142,7 @@ function validateForm() {
   }
   }else{
     document.getElementById("errConfirmPassword").innerHTML = "";
+    valid += 1;
   }
 
   if (currentAddress === ""){
@@ -152,6 +153,40 @@ function validateForm() {
   }else{
     document.getElementById("errCurrentAddress").innerHTML = "";
     scrollToElement = '';
+    valid += 1;
+  }
+
+  if (currentCountry === ""){
+    document.getElementById("errCurrentCountry").innerHTML = "please select country";
+    if (scrollToElement === ''){
+      scrollToElement = "currentCountry";
+  }
+  }else{
+    document.getElementById("errCurrentCountry").innerHTML = "";
+    scrollToElement = '';
+    valid += 1;
+  }
+  
+  if (currentState === ""){
+    document.getElementById("errCurrentState").innerHTML = "please select state";
+    if (scrollToElement === ''){
+      scrollToElement = "currentState";
+  }
+  }else{
+    document.getElementById("errCurrentState").innerHTML = "";
+    scrollToElement = '';
+    valid += 1;
+  }
+
+  if (currentCity === ""){
+    document.getElementById("errCurrentCity").innerHTML = "please select city";
+    if (scrollToElement === ''){
+      scrollToElement = "currentCity";
+  }
+  }else{
+    document.getElementById("errCurrentCity").innerHTML = "";
+    scrollToElement = '';
+    valid += 1;
   }
 
   if (!currentZipCode.match(number)){
@@ -162,6 +197,7 @@ function validateForm() {
   }else{
     document.getElementById("errCurrentZipCode").innerHTML = "";
     scrollToElement = '';
+    valid += 1;
   }
 
   if (dob == null || dob == "" || !dobPattern.test(dob)) {
@@ -172,6 +208,7 @@ function validateForm() {
   } else{
     document.getElementById("errdob").innerHTML = "";
     scrollToElement = '';
+    valid += 1;
   }
 
   if (true){
@@ -184,21 +221,31 @@ function validateForm() {
     }
 
     if (!formValid) 
-      document.getElementById("errSubscription").innerHTML = "choose one of the options";
+        document.getElementById("errSubscription").innerHTML = "choose one of the options";
       else{
-        document.getElementById("errSubscription").innerHTML = "";
+        document.getElementById("errSubscription").innerHTML = " ";
+        valid += 1;
       }
   }
+
   if (parseInt(captchaAnswer) !== captchaValue){
     document.getElementById("errCaptcha").innerHTML = "Invalid captcha";
+    if (scrollToElement === ''){
+      scrollToElement = "captcha";
+  }
   }else{
-    document.getElementById("errCaptcha").innerHTML = "";
+    document.getElementById("errCaptcha").innerHTML = " ";
+    scrollToElement = '';
+    valid += 1;
   }
 
-  if (scrollToElement != '')
-    {
+  if (scrollToElement != ''){
       document.getElementById(scrollToElement).scrollIntoView();
     }
+  if (valid == 14) { 
+      alert("Successfully registered");
+      return true;
+    } 
   return false;
 }
 
@@ -282,7 +329,7 @@ function selector() {
 			zipSel.options[zipSel.options.length] = new Option(zips[i], zips[i]);
 		}
 	};	
-};
+}
 
 
 function currentAddressSelector() {
@@ -291,7 +338,7 @@ function currentAddressSelector() {
 	var countySel = document.getElementById("currentCountry");
 	var stateSel = document.getElementById("currentState");	
 	var citySel = document.getElementById("currentCity");
-  var zipSel = document.getElementById("currentZipcode");
+  var zipSel = document.getElementById("currentZipCode");
   
 	
 	//Load countries
@@ -340,5 +387,5 @@ function currentAddressSelector() {
 			zipSel.options[zipSel.options.length] = new Option(zips[i], zips[i]);
 		}
 	};	
-};
+}
 
