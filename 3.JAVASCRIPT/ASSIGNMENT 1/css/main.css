@@ -1,71 +1,164 @@
+*{
+    box-sizing: border-box;
+    font-family: cursive;
+    letter-spacing: 3px;
+}
+
 body{
-    background-color: teal;
-}
-#outer{
-    margin: auto;
-    width: 50%; 
-    text-align: center;
-}
-#img{
-    width: 150px; 
-    height: 150px;
-}
-#h1{
-    color: white;
-    font-family: sans-serif;
+    background-image: url('../img/wooden.jpeg');
+    background-repeat: repeat;
+    background-attachment: fixed;
+    background-size: cover;
 }
 
-#form{
-    margin: auto;
-    margin-top: 40px; 
-    width: 50%; 
-    background-color: white; 
-    border-radius: 6px;
-    padding-bottom: 10px;
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
 }
 
-.label{
-    font-size:22px;
-    font-family: sans-serif;
-    padding-left: 20px;
+#logo {
+    height:200px;
+    width:200px;
+    border-radius: 10px;
+    box-shadow: 20px 20px 6px 2px rgba(0, 0, 0, 0.65), 19px 15px 4px 9px rgba(0, 0, 0, 0.19);
+}
+
+.container {
+padding: 16px;
+background-color: #381b1682;  /* #2f4f4fc7 , #f7f3f0*/
+border-radius: 6px;
+}
+
+#registrationForm h1,p{
+color:#fffff0d1;
+}
+
+label{
+color: #6a5acdc4;
 }
 
 .sup{
     color: red; 
-    font-size: 22px;
 }
 
-.input{
-    display: block; 
-    width: 90%;
-    padding:20px;
-    border-top: 1px;
-    border-left: 1px;
-    margin: auto; 
-    opacity: 0.5;
+.checkbox-container,input[type=text], input[type=password] ,input[type=date],input[type=number]{
+width: 100%;
+padding: 15px;
+margin: 5px 0 0px 0;
+display: inline-block;
+border: none;
+background: #f1f1f199;
 }
 
-#forradio{
-    padding-left: 20px; 
-    font-family: sans-serif;
+.checkbox-container label{
+    color:  black;
 }
 
-#btn{
-    margin: auto; 
+input[type=checkbox]{
+    color: blue;
+}
+
+input[type=checkbox] label{
+
+}
+
+input[type=text]:focus, input[type=password]:focus,input[type=date]:focus,input[type=number]:focus {
+background-color: #ddd;
+outline: none;
+}
+
+hr {
+border: 1px solid #f1f1f1;
+margin-bottom: 25px;
+}
+
+.registerbtn {
+background-color: #4CAF50;
+color: white;
+padding: 16px 20px;
+margin: 8px 0;
+border: none;
+cursor: pointer;
+width: 100%;
+opacity: 0.9;
+}
+
+.registerbtn:hover {
+opacity: 1;
+}
+
+a {
+color: dodgerblue;
+}
+
+
+.column {
+    float: left;
+    padding: 10px;
+  }
+  
+.left, .right {
+    width: 25%;
+}
+
+.middle {
     width: 50%;
-    text-align: center;
     margin-top: 50px;
 }
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
 
-#btns{
-    background-color: #4CAF50; 
-    border: none; 
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
+select {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 0px 0;
     display: inline-block;
-    font-size: 16px;
-    border-radius: 6px;
-    margin: auto;
+    border: none;
+    background:  #f1f1f199;
+    font-size: 18px;
+}
+select:focus{
+    background-color:  #ddd ;
+}
+
+#captcha {
+    width: 100%;
+    padding: 5px;
+    display: inline-block;
+    border: none;
+    background: transparent;
+}
+
+#ans {
+	display: inline-block;
+}
+
+#captchaCanvasContainer{
+	display: inline-block;
+    margin-top:5px;
+    text-align: center;
+    width:70%;
+}
+
+.radioContainer {
+    padding:20px;
+}
+
+.radioContainer label{
+    color: white;
+}
+
+#captcha div{
+    padding-top: 10px;
+}
+
+form h6{
+    color:red;
+    margin-bottom: 22px;
+    margin-top: 0px;
 }
