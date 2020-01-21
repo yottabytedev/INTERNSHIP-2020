@@ -43,7 +43,7 @@ color: #6a5acdc4;
     color: red; 
 }
 
-.checkbox-container,input[type=text], input[type=password] ,input[type=date],input[type=number]{
+#currentAddress, #permanentAddress, .checkbox-container,input[type=text], input[type=password] ,input[type=date],input[type=number]{
 width: 100%;
 padding: 15px;
 margin: 5px 0 0px 0;

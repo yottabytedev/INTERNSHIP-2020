@@ -87,7 +87,9 @@ function validateForm() {
     scrollToElement = "firstName";
   }else{
     document.getElementById("errFirstName").innerHTML = "";
-    scrollToElement = '';
+    if (scrollToElement === "firstName"){
+      scrollToElement = '';
+    }
     valid += 1;
   }
 
@@ -98,7 +100,9 @@ function validateForm() {
     }
   }else{
     document.getElementById("errMiddleName").innerHTML = "";
-    scrollToElement = '';    
+    if (scrollToElement === "middleName"){
+      scrollToElement = '';    
+    }
     valid += 1;
   }
 
@@ -109,39 +113,48 @@ function validateForm() {
     }
   }else{
     document.getElementById("errLastName").innerHTML = "";
-    scrollToElement = '';
+    if (scrollToElement === "lastName"){
+      scrollToElement = '';    
+    }
     valid += 1;
   }
 
   if (vaildEmailRegExpression.test(email) == false) {
     document.getElementById("errEmail").innerHTML = "invalid email";
     if (scrollToElement === ''){
-      scrollToElement = email;
+      scrollToElement = "email";
   }
   }else{
     document.getElementById("errEmail").innerHTML = "";
-    scrollToElement = '';
+    if (scrollToElement === "email"){
+      scrollToElement = '';    
+    }
     valid += 1;
   }
 
   if (password.length < 8 || !letter.test(password) || !number.test(password)) {
-    document.getElementById("errPassword").innerHTML = "invalid password";
+    document.getElementById("errPassword").innerHTML = "Password must be atleast 8 characters and must include an alphabet and a digit";
     if (scrollToElement === ''){
       scrollToElement = "password";
   }
   }else{
     document.getElementById("errPassword").innerHTML = "";
-    scrollToElement = '';
+    if (scrollToElement === "password"){
+      scrollToElement = '';    
+    }
     valid += 1;
   }
 
   if(password !== confirmPassword){
     document.getElementById("errConfirmPassword").innerHTML = "password did not match";
     if (scrollToElement === ''){
-      scrollToElement = "password";
+      scrollToElement = "confirmPassword";
   }
   }else{
     document.getElementById("errConfirmPassword").innerHTML = "";
+    if (scrollToElement === "confirmPassword"){
+      scrollToElement = '';    
+    }
     valid += 1;
   }
 
@@ -152,7 +165,9 @@ function validateForm() {
   }
   }else{
     document.getElementById("errCurrentAddress").innerHTML = "";
-    scrollToElement = '';
+    if (scrollToElement === "currentAddress"){
+      scrollToElement = '';    
+    }
     valid += 1;
   }
 
@@ -163,7 +178,9 @@ function validateForm() {
   }
   }else{
     document.getElementById("errCurrentCountry").innerHTML = "";
-    scrollToElement = '';
+    if (scrollToElement === "currentCountry"){
+      scrollToElement = '';    
+    }
     valid += 1;
   }
   
@@ -174,7 +191,9 @@ function validateForm() {
   }
   }else{
     document.getElementById("errCurrentState").innerHTML = "";
-    scrollToElement = '';
+    if (scrollToElement === "currentState"){
+      scrollToElement = '';    
+    }
     valid += 1;
   }
 
@@ -185,7 +204,9 @@ function validateForm() {
   }
   }else{
     document.getElementById("errCurrentCity").innerHTML = "";
-    scrollToElement = '';
+    if (scrollToElement === "currentCity"){
+      scrollToElement = '';    
+    }
     valid += 1;
   }
 
@@ -196,7 +217,9 @@ function validateForm() {
   }
   }else{
     document.getElementById("errCurrentZipCode").innerHTML = "";
-    scrollToElement = '';
+    if (scrollToElement === "currentZipCode"){
+      scrollToElement = '';    
+    }
     valid += 1;
   }
 
@@ -207,7 +230,9 @@ function validateForm() {
   }
   } else{
     document.getElementById("errdob").innerHTML = "";
-    scrollToElement = '';
+    if (scrollToElement === "dob"){
+      scrollToElement = '';    
+    }
     valid += 1;
   }
 
@@ -235,7 +260,9 @@ function validateForm() {
   }
   }else{
     document.getElementById("errCaptcha").innerHTML = " ";
-    scrollToElement = '';
+    if (scrollToElement === "captcha"){
+      scrollToElement = '';    
+    }
     valid += 1;
   }
 

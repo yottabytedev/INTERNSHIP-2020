@@ -5,7 +5,7 @@
         <title>Bakery</title>
         <meta charset="UTF-8">
         <meta name="description" content="Assignment 2">
-        <meta name="keywords" content="HTML,CSS,XML,JavaScript">
+        <meta name="keywords" content="HTML,CSS,JavaScript">
         <meta name="author" content="Devesh Kaushik">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link type="text/css" rel="stylesheet" href="css/main.css">
@@ -14,9 +14,8 @@
     
     <body onload="generateCaptcha(); selector(); currentAddressSelector();">
         <div>
-            <img src="img/logo2.jpg" id="logo" class="center">
+            <img src="img/logo2.jpg" id="logo" alt="logo"  class="center">
         </div>   
-
         <div class="row">
         <div class="column left"></div>
         <div class="column middle">
@@ -28,58 +27,58 @@
           
               <label for="firstName"><b>First Name<sup class="sup">*</sup></b></label>
               <input type="text" id="firstName" placeholder="First Name" name="Fname" />
-              <h6 class="error" id="errFirstName"></h6>
+              <h6  id="errFirstName"></h6>
           
               <label for="middleName"><b>Middle Name</b></label>
               <input type="text" id="middleName" placeholder="Middle Name" name="Mname" />
-              <h6 class="error" id="errMiddleName"></h6>
+              <h6  id="errMiddleName"></h6>
           
               <label for="lastName"><b>Last Name<sup class="sup">*</sup></b></label>
               <input type="text" id="lastName" placeholder="Last Name" name="Lname"/>
-              <h6 class="error" id="errLastName"></h6>
+              <h6  id="errLastName"></h6>
 
               <label for="email"><b>Email<sup class="sup">*</sup></b></label>
               <input type="text" id="email" placeholder="Enter Email" name="email" />
-              <h6 class="error" id="errEmail"></h6>
+              <h6  id="errEmail"></h6>
           
               <label for="password"><b>Password<sup class="sup">*</sup></b></label>
               <input type="password" id="password" placeholder="Enter Password" name="psw"/>
-              <h6 class="error" id="errPassword"></h6>
+              <h6  id="errPassword"></h6>
           
               <label for="confirmPassword"><b>Confirm Password<sup class="sup">*</sup></b></label>
               <input type="password" id="confirmPassword" placeholder="Confirm Password" name="confirm-psw" />
-              <h6 class="error" id="errConfirmPassword"></h6>
+              <h6  id="errConfirmPassword"></h6>
 
               <label for="currentAddress"><b>Current Address<sup class="sup">*</sup></b></label>
-              <input type="text" id="currentAddress" placeholder="Current Address" name="current-address"/>
-              <h6 class="error" id="errCurrentAddress"></h6>
+              <textarea id="currentAddress" placeholder="Enter your current address" name="current-address"></textarea>
+              <h6  id="errCurrentAddress"></h6>
               
               <label for="currentCountry"><b>Country<sup class="sup">*</sup></b></label>
               <select id="currentCountry" size="1">
                 <option value="" selected="selected">-- Select Country --</option>
               </select>
-              <h6 class="error" id="errCurrentCountry"></h6>
+              <h6  id="errCurrentCountry"></h6>
 
               <label for="currentState"><b>State<sup class="sup">*</sup></b></label>
               <select id="currentState" size="1">
                 <option value="" selected="selected">-- Select State --</option>
               </select>
-              <h6 class="error" id="errCurrentState"></h6>
+              <h6  id="errCurrentState"></h6>
 
               <label for="currentCity"><b>City<sup class="sup">*</sup></b></label>
               <select id="currentCity" size="1">
                 <option value="" selected="selected">-- Select City --</option>
               </select>
-              <h6 class="error" id="errCurrentCity"></h6>
+              <h6  id="errCurrentCity"></h6>
 
               <label for="currentZipCode"><b>Zip-Code<sup class="sup">*</sup></b></label>
               <select id="currentZipCode" size="1">
                 <option value="" selected="selected">-- Select zipcode --</option>
               </select>
-              <h6 class="error" id="errCurrentZipCode"></h6>
+              <h6  id="errCurrentZipCode"></h6>
 
               <label for="permanentAddress"><b>Permanent address</b></label>
-              <input type="text" id="permanentAddress" placeholder="Permanent address" name="permanent-address" />
+              <textarea id="permanentAddress" placeholder="Enter your permanent address" name="permanent-address"></textarea>
               <h6></h6>
 
               <label for="country"><b>Country</b></label>
@@ -108,7 +107,7 @@
 
               <label for="dob"><b>Date of Birth<sup class="sup">*</sup></b></label>
               <input type="date" id="dob" placeholder="mm/dd/yyyy" name="dob" />
-              <h6 class="error" id="errdob"></h6>
+              <h6  id="errdob"></h6>
 
               <label for="gender"><b>Gender<sup class="sup">*</sup></b></label>
               <select id="gender" name="gender">
@@ -118,7 +117,7 @@
               </select>
               <h6></h6>
 
-            <label for="pi"><b>Personal Interests</b></label>
+            <label><b>Personal Interests</b></label>
               <div class="checkbox-container">
                 <input type="checkbox" id="checkboxSports" name="sports" value="sports" /><label for="checkboxSports">Sports</label>
                 <input type="checkbox" id="checkboxBooks" name="books" value="books" /> <label for="checkboxBooks">Books</label>
@@ -130,12 +129,12 @@
                 <input type="text" id="txtOtherInterests" placeholder="Other Interests" name="else" style="display: none;"/>	
                 <h6></h6>
 
-              <label for="subscription"><b>Subscribe to News Letter<sup class="sup">*</sup></b></label>
+              <label><b>Subscribe to News Letter<sup class="sup">*</sup></b></label>
               <div class="radio-container">
                 <label><input type="radio" id="subscriptionYes" name="subscription" value="yes" />yes</label>
                 <label><input type="radio" id="subscriptionNo" name="subscription" value="no" />no</label>
               </div>
-              <h6 class="error" id="errSubscription"></h6>
+              <h6  id="errSubscription"></h6>
               
               <hr>
 
@@ -155,7 +154,7 @@
                 <div>
                 <input type="text" id="captchaAnswer" placeholder="Answer" name="cpatcha">
                 </div>
-                <h6 class="error" id="errCaptcha"></h6>
+                <h6  id="errCaptcha"></h6>
                 
               </div>
               
