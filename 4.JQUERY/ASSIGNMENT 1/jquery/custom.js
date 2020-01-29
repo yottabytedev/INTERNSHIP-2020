@@ -68,7 +68,7 @@ $(function() {
    }
 
    function generateCanvas(captchaString){
-      var canv = $(captchaCanvas).get(0);
+      var canv = $('#captchaCanvas')[0];
       canv.width = 180;
       canv.height = 50;
       var ctx = canv.getContext("2d");
