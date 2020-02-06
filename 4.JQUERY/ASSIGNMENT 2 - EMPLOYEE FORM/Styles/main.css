@@ -135,8 +135,8 @@ body {
 	background-image: none;
 }
 #profile.dragging .dashes {
-	animation-duration: 10s;
-	animation-name: spin;
+	animation-duration: 50s;
+	/* animation-name: spin; */
 	animation-iteration-count: infinite;
 	animation-timing-function: linear;
 	opacity: 1;

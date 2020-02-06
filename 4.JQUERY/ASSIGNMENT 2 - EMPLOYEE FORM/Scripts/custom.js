@@ -393,25 +393,27 @@ $(function(){
       // on submitting check whether the details entered are correct or not
       // validating captcha only on submittting the form
       $('form').on('click',':submit',function(){
-         var captchaAnswerId = "#captchaAnswer";
+         var captchaAnswerId = $("#captchaAnswer");
          if ($(captchaAnswerId).val() !== $('#captchaHiddenAnswer').val()){
             // there is a mismatch, hence show the error message
-               $(captchaAnswerId).addClass('input-err-border');
-               $(captchaAnswerId).next('.emsg').removeClass("hidden");
-               $(captchaAnswerId).next('.emsg').show();
+               captchaAnswerId.addClass('input-err-border');
+               captchaAnswerId.next('.emsg').removeClass("hidden");
+               captchaAnswerId.next('.emsg').show();
+               // Generate captcha again if wrong input is entered
+               captchaAnswerId.val('');
+               generateCaptcha();
                return false;
             }
          else{
                // else, do not display message
-               $(captchaAnswerId).removeClass('input-err-border');
-               $(captchaAnswerId ).next('.emsg').addClass('hidden');
-               if (!$('#firstName').val().match($regexname) || !($('#lastName').val()).replace(/\s+/g, '').match($regexname) || !$('#email').val().match($regexemail) || !$('#phoneNumberContainer input').val().match($regexphone)|| !$('#panNumber').val().match($regexpan) || !$('#aadharNumber').val().match($regexaadhar) || $('#profile').css('background-image') == 'none')
-               {$('html, body').animate({scrollTop:0}, 500);
-               return false;}
-               else {alert("successfully submitted check the details");
+               captchaAnswerId.removeClass('input-err-border');
+               captchaAnswerId.next('.emsg').addClass('hidden');
+               if ($('#firstName').val().match($regexname) || ($('#lastName').val()).replace(/\s+/g, '').match($regexname) || $('#email').val().match($regexemail) || $('#phoneNumberContainer input').val().match($regexphone)|| $('#panNumber').val().match($regexpan) || $('#aadharNumber').val().match($regexaadhar) || $('#profile').css('background-image') != 'none')
+               {alert("successfully submitted check the details");
                // Displaying the details if form is succesfully submitted
-               displaydetails();}
+               displaydetails();
                return false;
+               }
          }
       });
 
