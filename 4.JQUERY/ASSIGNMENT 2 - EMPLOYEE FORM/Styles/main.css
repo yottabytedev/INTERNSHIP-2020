@@ -34,14 +34,14 @@ body {
 	font-size: 30px;
 	font-weight: 1000;
 }
-#msform {
+#employeeForm {
 	display: block;
     width: 640px;
     max-width: 90vw;
 	margin: 50px auto;
 	position: relative;
 }
-#msform fieldset {
+#employeeForm fieldset {
 	background: white;
 	border: 1px solid cornflowerblue;
 	border-radius: 3px;
@@ -52,7 +52,7 @@ body {
 	margin: 40px 10%;
 }
 /*inputs*/
-#msform input, #msform textarea ,#msform select{
+#employeeForm input, #employeeForm textarea ,#employeeForm select{
 	padding: 15px;
 	border: 1px solid #ccc;
 	border-radius: 3px;
@@ -63,11 +63,11 @@ body {
 	color: #2C3E50;
 	font-size: 13px;
 }
-#msform textarea{
+#employeeForm textarea{
 	resize: none;
 }
 /*buttons*/
-#msform .action-button {
+#employeeForm .action-button {
 	width: 100px;
 	background: #27AE60;
 	font-weight: bold;
@@ -78,7 +78,7 @@ body {
 	padding: 10px 5px;
 	margin: 10px 5px;
 }
-#msform .action-button:hover, #msform .action-button:focus {
+#employeeForm .action-button:hover, #employeeForm .action-button:focus {
 	box-shadow: 0 0 0 2px white, 0 0 0 3px #27AE60;
 }
 

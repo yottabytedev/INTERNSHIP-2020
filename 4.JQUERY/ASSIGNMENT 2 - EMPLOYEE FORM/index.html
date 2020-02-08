@@ -16,19 +16,18 @@
         <div class="flex-container">
             <div class="form-header"></div>
             <div class="form-container">
-                <form id="msform" action="#">
+                <form id="employeeForm" action="#">
                     <!-- fieldsets -->
                     <fieldset>
                     <legend class="legend-position">Basic Info</legend>
 
                     <!-- Profile Image-->
-                    <div id="profileImageContainer">
-                        <input type="file" id="mediaFile" />
+                    <div id="profileImageContainer"> 
                         <div id="profile">
-                            <div class="dashes"></div>
                             <label>Click to browse or drag an image here</label>
+                            <div class="dashes"></div>
                         </div>
-                            
+                        <input type="file" id="mediaFile" />         
                     </div>
 
                     <!-- First Name -->
@@ -50,10 +49,10 @@
                     </div>
                     
                     <!-- Phone Number-->
-                    <div id="phoneNumberContainer">
+                    <div id="phoneNumberContainer" class="js-phone-number-container">
                         <div class="after-add-more">
                             <div class="emsg-input-container">
-                                <input type="number" id="phoneNumber" name="phoneNumber" placeholder="Phone Number" />
+                                <input type="number" class="phone-number" name="phoneNumber" placeholder="Phone Number" />
                                 <span class="emsg hidden">Phone no. should start with digit [4-9] and contain {10-12} digits</span>
                                 <button type="button" class="add-more change">+</button>       
                             </div>
@@ -79,39 +78,39 @@
                     <!-- Address-->
                     <div id="addressContainer">
                         <div class="after-add-more-address">
-                            <div class="emsg-input-container">
-                                <textarea name="address" placeholder="Address"></textarea>
-                                <span class="emsg hidden">please enter your address</span>
-                            </div>
+                            <div class="js-clone-address-div">
+                                <div class="emsg-input-container">
+                                    <textarea name="address" class="address" placeholder="Address"></textarea>
+                                    <span class="emsg hidden">please enter your address</span>
+                                </div>
 
-                            <div class="emsg-input-container">
-                                <select id="currentCountry" size="1" name="currentCountry">
-                                    <option value="" selected="selected">-- Select Country --</option>
-                                    <option value="India" >India</option>
-                                    <option value="USA" >USA</option>
-                                </select>
-                                <span class="emsg hidden">select one of the options</span>
-                            </div>
+                                <div class="emsg-input-container">
+                                    <select class="country" size="1" name="country">
+                                        <option value="" selected="selected">-- Select Country --</option>
+                                        <option value="India" >India</option>
+                                        <option value="USA" >USA</option>
+                                    </select>
+                                    <span class="emsg hidden">select one of the options</span>
+                                </div>
 
-                            <div class="emsg-input-container">
-                                <select id="currentState" size="1" name="currentState">
-                                    <option value="" selected="selected">-- Select State --</option>
-                                </select>
-                                <span class="emsg hidden">select one of the options</span>
-                            </div>
+                                <div class="emsg-input-container">
+                                    <select class="state" size="1" name="state">
+                                        <option value="" selected="selected">-- Select State --</option>
+                                    </select>
+                                    <span class="emsg hidden">select one of the options</span>
+                                </div>
 
-                            <div class="emsg-input-container">
-                                <select id="currentCity" size="1" name="currentCity">
-                                    <option value="" selected="selected">-- Select City --</option>
-                                </select>
-                                <span class="emsg hidden">select one of the options</span>
-                            </div>
+                                <div class="emsg-input-container">
+                                    <select class="city" size="1" name="city">
+                                        <option value="" selected="selected">-- Select City --</option>
+                                    </select>
+                                    <span class="emsg hidden">select one of the options</span>
+                                </div>  
 
-                            <div class="emsg-input-container">
-                                <select id="currentZipcode" size="1" name="currentZipcode">
-                                    <option value="" selected="selected">-- Select zipcode --</option>
-                                </select>
-                                <span class="emsg hidden">select one of the options</span>
+                                <div class="emsg-input-container">
+                                    <input type="number" class="zipcode" name="zipcode" placeholder="zicode"/>
+                                    <span class="emsg hidden">zipcode can only be of digits (6 digits) eg. 122001</span>
+                                </div>
                             </div>
                             <button type="button" class="add-more-address">Add Another Address</button>
                         </div>
@@ -159,20 +158,12 @@
                         <div class="col" id="demail"></div>
                       </div>
                       <div class="row">
-                        <div class="col">Phone No.</div>
-                        <div class="col" id="dphone"></div>
-                      </div>
-                      <div class="row">
                         <div class="col">Pancard No.</div>
                         <div class="col" id="dpan"></div>
                       </div>
                       <div class="row">
                         <div class="col">Aadhar No.</div>
                         <div class="col" id="daadhar"></div>
-                      </div>
-                      <div class="row">
-                        <div class="col">Address</div>
-                        <div class="col wrap-address" id="daddress"></div>
                       </div>
                       <div class="row">
                         <div class="col">Date of form submittion</div>
