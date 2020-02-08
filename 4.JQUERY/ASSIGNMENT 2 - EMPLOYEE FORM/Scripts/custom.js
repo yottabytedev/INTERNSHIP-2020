@@ -39,8 +39,8 @@ $(function(){
       $('html, body').animate({scrollTop:0}, 600);
     });
 
-    // Make all the fields required
-    $("input:not(:first),textarea,select").prop("required",true);
+    // Make all the fields required  :not(:first)
+    $("input,textarea,select").prop("required",true);
 
     // Making sure no background is present
     $('#profile').addClass('dragging').removeClass('dragging');
@@ -244,6 +244,14 @@ $(function(){
          $(this).removeClass('input-err-border').next('.emsg').addClass('hidden');
       });
 
+      function allRequiredFieldsFilled(){
+         var temp = true;
+         $('.js-required').each(function(){
+            if ($.trim($(this).val()) == "")
+            { temp = false;}
+         });
+         return temp;
+      }
       // on submitting check whether the details entered are correct or not
       // validating captcha only on submittting the form
       $('form').on('click',':submit',function(){
@@ -255,16 +263,14 @@ $(function(){
                captchaAnswerId.val('');
                generateCaptcha();
             }
-         else{
-               if ( $('#employeeForm').find('.emsg.hidden').length > 11 || $('#profile').css('background-image') != 'none')
-               {alert("successfully submitted check the details");
-               // Displaying the details if form is succesfully submitted
-               displaydetails();
-               }
-         }
-         return false;
+            if ( $('#employeeForm').find('.emsg.hidden').length > 11 && allRequiredFieldsFilled())
+            {
+                  alert("successfully submitted check the details");
+                  // Displaying the details if form is succesfully submitted
+                  displaydetails();
+                  return false;
+            }   
       });
-
 
       function displaydetails()
       {
@@ -281,10 +287,6 @@ $(function(){
          //$('#dphone').text($("#phoneNumber").val());
          $('#dpan').text($("#panNumber").val());
          $('#daadhar').text($("#aadharNumber").val());
-         dcountry = $('#currentCountry').val();
-         dstate = $('#currentState').val();
-         dcity = $('#currentCity').val();
-         dzipcode = $('#currentZipcode').val();
          combineAddressDetails = $('textarea[name=address]').val() + '<br/>' + dcity + ', ' + dstate +', ' + dzipcode + '<br/>' + dcountry;
          $('#daddress').html(combineAddressDetails);
          $('#ddate').text(output);
@@ -313,6 +315,5 @@ $(function(){
 
          //hide the form
          $('form').addClass('hidden');
-         return false;
       }
 });

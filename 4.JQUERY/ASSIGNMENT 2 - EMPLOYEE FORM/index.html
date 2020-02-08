@@ -27,24 +27,24 @@
                             <label>Click to browse or drag an image here</label>
                             <div class="dashes"></div>
                         </div>
-                        <input type="file" id="mediaFile" />         
+                        <input type="file" id="mediaFile" class="js-required"/>         
                     </div>
 
                     <!-- First Name -->
                     <div class="emsg-input-container">
-                        <input type="text" id="firstName" name="firstName" placeholder="First Name" />
+                        <input type="text" id="firstName" class="js-required" name="firstName" placeholder="First Name" />
                         <span class="emsg hidden">please enter a valid name (min 3 letter, only letters)</span>
                     </div>
 
                     <!-- Last Name-->
                     <div class="emsg-input-container">
-                        <input type="text" id="lastName" name="lastName" placeholder="Last Name" />
+                        <input type="text" id="lastName" class="js-required" name="lastName" placeholder="Last Name" />
                         <span class="emsg hidden">please enter a valid name (min 3 letter, only letters)</span>
                     </div>
 
                     <!-- Email Id-->
                     <div class="emsg-input-container">
-                        <input type="text" id="email" name="email" placeholder="Email" />
+                        <input type="text" id="email" class="js-required" name="email" placeholder="Email" />
                         <span class="emsg hidden">invalid email id (eg. john@gmail.com)</span>
                     </div>
                     
@@ -52,7 +52,7 @@
                     <div id="phoneNumberContainer" class="js-phone-number-container">
                         <div class="after-add-more">
                             <div class="emsg-input-container">
-                                <input type="number" class="phone-number" name="phoneNumber" placeholder="Phone Number" />
+                                <input type="number" class="phone-number js-required" name="phoneNumber" placeholder="Phone Number" />
                                 <span class="emsg hidden">Phone no. should start with digit [4-9] and contain {10-12} digits</span>
                                 <button type="button" class="add-more change">+</button>       
                             </div>
@@ -65,13 +65,13 @@
                     
                     <!-- Pancard Number-->
                     <div class="emsg-input-container">
-                        <input type="text" id="panNumber" name="panNumber" placeholder="Pan Number" />
+                        <input type="text" id="panNumber" class="js-required" name="panNumber" placeholder="Pan Number" />
                         <span class="emsg hidden">invalid pan number (FDEST4352R)</span>
                     </div>
 
                     <!-- Aadharcard Number -->
                     <div class="emsg-input-container">
-                        <input type="text" id="aadharNumber" name="aadharNumber" placeholder="Aadhar Number" /> 
+                        <input type="text" id="aadharNumber"  class="js-required" name="aadharNumber" placeholder="Aadhar Number" /> 
                         <span class="emsg hidden">invalid aadhar number (12 digits)</span>
                     </div>
 
@@ -80,12 +80,12 @@
                         <div class="after-add-more-address">
                             <div class="js-clone-address-div">
                                 <div class="emsg-input-container">
-                                    <textarea name="address" class="address" placeholder="Address"></textarea>
+                                    <textarea name="address" class="address js-required" placeholder="Address"></textarea>
                                     <span class="emsg hidden">please enter your address</span>
                                 </div>
 
                                 <div class="emsg-input-container">
-                                    <select class="country" size="1" name="country">
+                                    <select class="country js-required" size="1" name="country">
                                         <option value="" selected="selected">-- Select Country --</option>
                                         <option value="India" >India</option>
                                         <option value="USA" >USA</option>
@@ -94,21 +94,21 @@
                                 </div>
 
                                 <div class="emsg-input-container">
-                                    <select class="state" size="1" name="state">
+                                    <select class="state js-required" size="1" name="state">
                                         <option value="" selected="selected">-- Select State --</option>
                                     </select>
                                     <span class="emsg hidden">select one of the options</span>
                                 </div>
 
                                 <div class="emsg-input-container">
-                                    <select class="city" size="1" name="city">
+                                    <select class="city js-required" size="1" name="city">
                                         <option value="" selected="selected">-- Select City --</option>
                                     </select>
                                     <span class="emsg hidden">select one of the options</span>
                                 </div>  
 
                                 <div class="emsg-input-container">
-                                    <input type="number" class="zipcode" name="zipcode" placeholder="zicode"/>
+                                    <input type="number" class="zipcode js-required" name="zipcode" placeholder="zicode"/>
                                     <span class="emsg hidden">zipcode can only be of digits (6 digits) eg. 122001</span>
                                 </div>
                             </div>
