@@ -45,12 +45,17 @@ namespace TaxCalculator.UI
 
 
             IncomeTax it = new IncomeTax();
-            
-            var gti = it.GTI(income, deduction);      //    Calculate Gross Taxable Income
-            var ITax = (slabs)it.TaxDeduction(gti);   //    Calculate Tax for different slabs
+
+            //    Calculate Gross Taxable Income
+            var gti = it.GTI(income, deduction);
+
+            //    Calculate Tax for different slabs
+            var ITax = (slabs)it.TaxDeduction(gti);   
 
             Program display = new Program();
-            display.Display(ITax);                    //    Display Tax values
+
+            //    Display Tax values
+            display.Display(ITax);                    
             
             Console.ReadKey();
         }
