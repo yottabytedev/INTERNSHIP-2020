@@ -1,0 +1,20 @@
+Income Tax Slabs
+Income Range				Tax rate	Tax to be paid
+Up to Rs.2,50,000				0	No tax
+Between Rs 2.5 lakhs and Rs 5 lakhs		5%	5% of your taxable income
+Between Rs 5 lakhs and Rs 10 lakhs		20%	Rs 12,500 + 20% of income above Rs 5 lakhs
+Above 10 lakhs					30%	Rs 1,12,500 + 30% of income above Rs 10 lakhs
+
+User Inputs
+Salary in Rupees
+Section 80C deduction in Rupees
+
+Requirements
+Build a Solution with Project structure like
+1. Console Application - responsible for user interaction and getting input values
+2. Class Library(Business Layer) - contains logics for implementation
+3. Interface - methods to implement the result
+
+Output
+Slabwise taxation amount
+final tax amount
