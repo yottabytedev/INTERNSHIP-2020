@@ -8,56 +8,81 @@ namespace TaxCalculator.UI
     {
         static void Main(string[] args)
         {
-            double income = 0.0;
-            double deduction = 0.0;
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.WriteLine("\t\t\t\t Welcome To Income Tax Calculator \n\n");
 
-            Console.WriteLine("Enter your income in Rupees");
+            double income;
+            double deduction;
+
+            // Defining object of program class for getting value and printing functions
+            Program program = new Program();
+
+            // Calculate tax until user stops the program
+            while(true)
+            {
+                Console.ForegroundColor = ConsoleColor.Gray;
+
+                // Calling GetValue(message to print) function and storing the values
+                income = program.GetValue("Enter your income in Rupees");
+                deduction = program.GetValue("Enter your 80C investment amount in Rupees");
+
+                // Object for calculating Gross Taxable Income and Tax for different slabs
+                IncomeTax it = new IncomeTax();
+
+                double gti = it.GTI(income, deduction);
+                slabs ITax = (slabs)it.TaxDeduction(gti);
+
+                
+                program.Display(ITax);
+
+
+                // Check response of user for repeating process
+                char response = 'p';
+
+                while (response != 'n' && response != 'y')
+                {
+                    Console.WriteLine("\n\nDo you want to calculate your tax again ?(y/n)");
+                    try
+                    {
+                        response = Convert.ToChar(Console.ReadLine());
+                        response = Char.ToLower(response);
+                    }
+                    catch(Exception e)
+                    {
+                        Console.WriteLine("Invalid response \n"+e.Message);
+                    }
+                }
+                
+                Console.WriteLine("\n\n");
+                if( response == 'n')
+                {
+                    Environment.Exit(0);
+                }
+            }
+        }
+
+        private double GetValue(string msg)
+        {
+            Console.WriteLine(msg);
+            double temp;
+
             try
             {
-                income = Convert.ToDouble(Console.ReadLine());
+                temp = Convert.ToDouble(Console.ReadLine());
+                
+                if (temp < 0) 
+                {
+                    Console.WriteLine("Negative input detected");
+                    return GetValue(msg);
+                }
             }
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
-                Console.ReadKey();
-                Environment.Exit(0);
+                return GetValue(msg);
             }
 
-            Console.WriteLine("Enter your 80C investment amount in Rupees");
-            try
-            {
-                deduction = Convert.ToDouble(Console.ReadLine());
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-                Console.ReadKey();
-                Environment.Exit(0);
-            }
-
-            // Terminate program if negative salary or deduction is provided
-            if (income < 0 || deduction < 0)
-            {
-                Console.WriteLine("Negative input detected");
-                Console.ReadKey();
-                Environment.Exit(0);
-            }
-
-
-            IncomeTax it = new IncomeTax();
-
-            //    Calculate Gross Taxable Income
-            var gti = it.GTI(income, deduction);
-
-            //    Calculate Tax for different slabs
-            var ITax = (slabs)it.TaxDeduction(gti);   
-
-            Program display = new Program();
-
-            //    Display Tax values
-            display.Display(ITax);                    
-            
-            Console.ReadKey();
+            return temp;
         }
 
         void Display(slabs ITax)
@@ -70,7 +95,11 @@ namespace TaxCalculator.UI
             Console.WriteLine("Rs. 5,00,000 - 10,00,000 \t Rs. {0}", ITax.slab2.ToString("#,0.00", new CultureInfo("hi-IN")));
             Console.WriteLine("Rs. 10,00,000+   \t\t Rs. {0}", ITax.slab3.ToString("#,0.00", new CultureInfo("hi-IN")));
             Console.WriteLine("--------------------------------------------------------------");
+            Console.BackgroundColor = ConsoleColor.Red;
+            Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("Total amt \t\t\t Rs. {0}", ITax.totalAmt.ToString("#,0.00", new CultureInfo("hi-IN")));
+            Console.BackgroundColor = ConsoleColor.Black;
+            Console.ForegroundColor = ConsoleColor.Gray;
             Console.WriteLine("--------------------------------------------------------------");
         }
     }

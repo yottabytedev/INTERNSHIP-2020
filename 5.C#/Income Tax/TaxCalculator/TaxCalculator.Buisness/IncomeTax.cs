@@ -8,7 +8,7 @@ namespace TaxCalculator.Buisness
         public double GTI(double income, double deduction)
         {
             //  Return Gross Taxable Income after subtracting the deduction maximum of amount 1.5 lakh
-            return (income - Math.Min(150000, deduction));
+            return Math.Max((income - Math.Min(150000, deduction)),0);
         }
         
         public object TaxDeduction(double gti)
