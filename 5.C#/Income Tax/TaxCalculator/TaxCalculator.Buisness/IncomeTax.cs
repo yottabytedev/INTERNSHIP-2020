@@ -11,26 +11,18 @@ namespace TaxCalculator.Buisness
             return Math.Max((income - Math.Min(150000, deduction)),0);
         }
         
-        public object TaxDeduction(double gti)
+        public Slabs TaxDeduction(double gti)
         {
-            slabs s = new slabs();
+            Slabs slab = new Slabs();
    
             //  Calculating tax amount in every slab if no tax amount make it 0
-            s.slab1 = Math.Max((Math.Min(gti, 500000) - 250000), 0) * 0.05;
-            s.slab2 = Math.Max((Math.Min(gti, 1000000) - 500000), 0) * 0.20;
-            s.slab3 = Math.Max((gti - 1000000), 0) * 0.30;
-            s.totalAmt = s.slab1 + s.slab2 + s.slab3;
+            slab.firstSlab = Math.Max((Math.Min(gti, 500000) - 250000), 0) * 0.05;
+            slab.secondSlab = Math.Max((Math.Min(gti, 1000000) - 500000), 0) * 0.20;
+            slab.thirdSlab = Math.Max((gti - 1000000), 0) * 0.30;
+            slab.totalAmt = slab.firstSlab + slab.secondSlab + slab.thirdSlab;
 
-            return s;
+            return slab;
         }
     }
 
-    // Class for storing value of each slab
-    public class slabs
-    {
-        public double slab1;
-        public double slab2;
-        public double slab3;
-        public double totalAmt;
-    }
 }

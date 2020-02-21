@@ -3,6 +3,6 @@
     public interface IncomeTaxInterface
     {
         double GTI(double income, double deduction);        // Gross Taxable Income
-        object TaxDeduction(double gti);                    // Tax per slab
+        Slabs TaxDeduction(double gti);                    // Tax per slab
     }
 }
