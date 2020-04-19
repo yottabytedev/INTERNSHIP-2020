@@ -18,12 +18,12 @@
             <div class="row">
                 <div class="col-xs-12">
                     <div class="form-group"><label for="imagePath">Image Path</label>
-                        <input type="text" id="imagePath" formControlName="imagePath" class="form-control"></div>
+                        <input type="text" id="imagePath" formControlName="imagePath" class="form-control" #imagePath></div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-xs-12">
-                    <img src="" alt="" class="img-responsive">
+                    <img [src]="imagePath.value" alt="" class="img-responsive">
                 </div>
             </div>
             <div class="row">
@@ -47,7 +47,7 @@
                             <input type="text" class="form-control" formControlName="amount">
                         </div>
                         <div class="col-xs-2">
-                            <button class="btn btn-danger">X</button>
+                            <button type="button" class="btn btn-danger" (click)="onDeleteIngredient(i)">X</button>
                         </div>
                     </div>
                     <hr>
