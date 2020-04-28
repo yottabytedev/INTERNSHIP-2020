@@ -1,0 +1,68 @@
+{
+  "recipes": [
+    {
+      "name": "Pasta",
+      "description": "Italian dish",
+      "imagePath": "https://upload.wikimedia.org/wikipedia/commons/5/54/Pasta-2802156_1920.jpg",
+      "ingredients": [
+        {
+          "name": "pasta",
+          "amount": 1
+        },
+        {
+          "name": "sauce",
+          "amount": 1
+        }
+      ],
+      "id": 0
+    },
+    {
+      "name": "Pizza",
+      "description": "Italian dish",
+      "imagePath": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTx6SrTcAdbzggSKn9Hu1dECjypFr9Kb3APBHgnvUZlKMBHU5rg8w&s",
+      "ingredients": [
+        {
+          "name": "pizza base",
+          "amount": 1
+        },
+        {
+          "name": "capsicum",
+          "amount": 1
+        }
+      ],
+      "id": 1
+    },
+    {
+      "name": "banana",
+      "description": "Italian dish",
+      "imagePath": "https://upload.wikimedia.org/wikipedia/commons/5/54/Pasta-2802156_1920.jpg",
+      "ingredients": [
+        {
+          "name": "pasta",
+          "amount": 1
+        },
+        {
+          "name": "sauce",
+          "amount": 2
+        }
+      ],
+      "id": 2
+    },
+    {
+      "name": "apple",
+      "imagePath": "https://upload.wikimedia.org/wikipedia/commons/5/54/Pasta-2802156_1920.jpg",
+      "description": "Italian dish",
+      "ingredients": [
+        {
+          "name": "pasta",
+          "amount": 1
+        },
+        {
+          "name": "sauce",
+          "amount": 2
+        }
+      ],
+      "id": 3
+    }
+  ]
+}

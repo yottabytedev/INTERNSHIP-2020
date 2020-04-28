@@ -1,4 +1,7 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { RecipeService } from './../../recipes/recipe.service';
+import { DataStorageService } from '../../shared/data-storage.service';
+import { Component, OnInit } from '@angular/core';
+//import { Response} from '@angular/common/http';
 
 @Component({
   selector: 'app-header',
@@ -6,14 +9,37 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  @Output() featureSelected = new EventEmitter();
-
-  constructor() { }
+  constructor(private dataStorageService: DataStorageService,
+    private recipeService: RecipeService) { }
 
   ngOnInit() {
   }
 
-  onSelect(feature: string){
-    this.featureSelected.emit(feature);
+  onSaveData() {
+    // this.dataStorageService.storeRecipes().subscribe(
+    //   (response: Response) => {
+    //     console.log(response);
+    //   }
+    // )
+    // let recipes = this.recipeService.getRecipes();
+    // for (const recipe of recipes) {
+    //   console.log(recipe);
+    //   if (recipe.id == null)
+    //   {
+    //     this.dataStorageService.storeRecipes(recipe)
+    //     .subscribe((response: Response) => {
+    //       console.log(response);
+    //     });
+    //   } else {
+    //     this.dataStorageService.updateRecipe(recipe)
+    //       .subscribe((response: Response) => {
+    //         console.log(response);
+    //       });
+    //   }
+    // }
+  }
+
+  onFetchData() {
+    this.recipeService.setRecipes();
   }
 }

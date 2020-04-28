@@ -1,11 +1,13 @@
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { AppRoutingModule } from './app-routing.routing';
 import { NgModule } from '@angular/core';
-import { ShoppingListService } from './shopping-list/shopping-list.service';
-import { HeaderComponent } from './header/header/header.component';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
+import { AppRoutingModule } from './app-routing.routing';
 
 import { AppComponent } from './app.component';
+import { HeaderComponent } from './header/header/header.component';
+import { ShoppingListService } from './shopping-list/shopping-list.service';
+import { DataStorageService } from './shared/data-storage.service';
 import { RecipesComponent } from './recipes/recipes.component';
 import { RecipeListComponent } from './recipes/recipe-list/recipe-list.component';
 import { RecipeDetailComponent } from './recipes/recipe-detail/recipe-detail.component';
@@ -35,11 +37,13 @@ import { RecipeService } from './recipes/recipe.service';
       BrowserModule,
       FormsModule,
       ReactiveFormsModule,
-      AppRoutingModule
+      AppRoutingModule,
+      HttpClientModule
    ],
    providers: [ 
       ShoppingListService,
-      RecipeService 
+      RecipeService,
+      DataStorageService 
    ],
    bootstrap: [
       AppComponent

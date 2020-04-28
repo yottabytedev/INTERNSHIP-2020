@@ -70,6 +70,8 @@ export class RecipeEditComponent implements OnInit {
       'description' : new FormControl(recipeDescription, Validators.required),
       'ingredients' : recipeIngredients
     });
+
+    console.log(this.recipeForm);
   }
 
   onSubmit() {
@@ -90,6 +92,4 @@ export class RecipeEditComponent implements OnInit {
   onCancel() {
     this.router.navigate(['../'], {relativeTo: this.route});
   }
-
-  
 }

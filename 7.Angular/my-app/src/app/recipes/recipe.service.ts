@@ -1,3 +1,4 @@
+import { DataStorageService } from './../shared/data-storage.service';
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 
@@ -18,7 +19,8 @@ export class RecipeService {
     [
       new Ingredient('pasta',1),
       new Ingredient('sauce',1)
-    ]
+    ],
+    0
     ),
     new Recipe('Pizza',
     'Italian dish',
@@ -26,11 +28,23 @@ export class RecipeService {
     [
       new Ingredient('pizza base',1),
       new Ingredient('capsicum',1)
-    ]
+    ],
+    1
     )
   ];
   
-  constructor(private slService: ShoppingListService) { }
+  constructor(private slService: ShoppingListService,
+    private dataStorageService: DataStorageService) { }
+
+  setRecipes() {
+    this.dataStorageService.getRecipes().subscribe(
+      (response) => {
+        this.recipes = response;
+        this.recipeChanged.next(this.recipes.slice());
+      }
+    );
+    console.log(this.recipes);
+  }
 
   getRecipes() {
     return this.recipes.slice();
