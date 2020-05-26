@@ -85,6 +85,7 @@ export class BlogPostAddEditComponent implements OnInit {
           this.router.navigate([this.router.url]);
         });
     }
+    this.router.navigate(['/']);
   }
 
   cancel() {

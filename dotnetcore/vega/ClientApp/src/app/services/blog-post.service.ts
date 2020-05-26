@@ -21,8 +21,7 @@ export class BlogPostService {
 
   constructor(private http: HttpClient,
     private router: Router) { 
-    this.myAppUrl = router.url;
-    console.log(this.myAppUrl);
+    this.myAppUrl = 'https://localhost:5001/';
     this.myApiUrl = 'api/BlogPosts/';
   }
 
